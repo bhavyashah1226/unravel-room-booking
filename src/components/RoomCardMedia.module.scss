@@ -1,0 +1,67 @@
+.container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+.active {
+  opacity: 1;
+}
+.inactive {
+  opacity: 0;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 10;
+
+  &.prev {
+    left: 0.5rem;
+  }
+  &.next {
+    right: 0.5rem;
+  }
+}
+
+.dots {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.25rem;
+  z-index: 10;
+
+  .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+  }
+  .dotActive {
+    background-color: #fff;
+  }
+  .dotInactive {
+    background-color: #9ca3af;
+  }
+}
