@@ -7,7 +7,6 @@ export default function RoomCardMedia({ variant, hotel }) {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
 
-  // Build slides: images then videos
   const slides = useMemo(() => {
     const photos = [];
     const vids = [];
@@ -42,7 +41,7 @@ export default function RoomCardMedia({ variant, hotel }) {
         vids.push({ type: "video", src: v.video_url.med })
       );
     }
-    return [...photos, ...vids];
+    return [...vids, ...photos];
   }, [variant, hotel]);
 
   // Observe visibility to autoplay and reset when off-screen
